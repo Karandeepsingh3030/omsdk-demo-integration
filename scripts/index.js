@@ -27,8 +27,9 @@ const VIDEO_ELEMENT = document.getElementById('video-creative-element');
 
 //adding event listners
 VIDEO_ELEMENT.addEventListener("loadeddata",(e)=> videoDidLoad(e))
-VIDEO_ELEMENT.addEventListener("timeupdate",(e)=> videoDidCrossQuartile())
+// VIDEO_ELEMENT.addEventListener("timeupdate",(e)=> videoDidCrossQuartile())
 // VIDEO_ELEMENT.addEventListener('click', () => {
+//     // console.log(mediaEvents.adUserInteraction)
 //     mediaEvents.adUserInteraction(InteractionType.CLICK);
 //   });
 
@@ -80,8 +81,8 @@ const mediaEvents = new MediaEvents(adSession);
 
 
 function videoDidLoad() {
-    const isSkippable = ad.creative.linear.skipOffset != null;
-    const skipOffset = ad.creative.linear.skipOffset;
+    // const isSkippable = ad.creative.linear.skipOffset != null;
+    // const skipOffset = ad.creative.linear.skipOffset;
     const vastProperties = new VastProperties(isSkippable, skipOffset,
         /* isAutoPlay= */ true, /* position= */ 'preroll');
     adEvents.loaded(vastProperties);
